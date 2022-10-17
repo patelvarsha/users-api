@@ -21,10 +21,19 @@
       "id": 4
     },
     {
+      "name": "Kush Patel",
+      "email": "kushpatel@gmail.com",
       "id": 5
     },
     {
+      "name": "Divyesh ",
+      "email": "div@gmail.com",
       "id": 6
+    },
+    {
+      "name": "Darshan",
+      "email": "darshan@gmail.com",
+      "id": 7
     }
   ],
   "post": [
