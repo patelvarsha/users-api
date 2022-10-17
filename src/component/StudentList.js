@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from "react"
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import api from '../api';
 export default function StudentList() {
@@ -13,26 +13,25 @@ export default function StudentList() {
   }, [])
 
   const getStud = () => {
-
-    axios.get(api)
-      .then(function (res) {
-        //  console.log(res.data)
+    axios.get('http://localhost:3000/users').then(function (res) {
+         console.log(res.data)
         setStudData(res.data)
       })
       .catch(err => console.log(err))
   }
 
   const deletePost = (id) => {
-    const index = studData.findIndex(stud => stud.id === id);
-    // const d = studData.find(element => element.id)
-    // console.log(d);
-    const data =
-      studData.filter((stud) => {
-        return stud.id !== id
-      })
-    console.log(data);
-axios.delete(api+id,).then(res=>console.log(res.data))
-    setStudData(data)
+    axios.delete('http://localhost:3000/users').then(res=>console.log(res.data)).catch(err=>console.log(err))
+//     const index = studData.findIndex(stud => stud.id === id);
+//     // const d = studData.find(element => element.id)
+//     // console.log(d);
+//     const data =
+//       studData.filter((stud) => {
+//         return stud.id !== id
+//       })
+//     console.log(data);
+// axios.delete(api+id,).then(res=>console.log(res.data))
+//     setStudData(data)
 
   };
 
@@ -52,6 +51,7 @@ axios.delete(api+id,).then(res=>console.log(res.data))
       })
   }
   const updateStud = (id) => {
+    
     const index = studData.findIndex(stud => stud.id === id);
 
     // console.log(index);

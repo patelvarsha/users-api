@@ -17,7 +17,7 @@ export default function ListUser() {
     },[]);
 
     const getUser = () => {
-        axios.get(api+id).then(function (response)
+        axios.get('http://localhost:3000/users'+id).then(function (response)
          {
             // console.log(response.data[`${id}`]);
             setInputs(response.data);
@@ -32,8 +32,8 @@ export default function ListUser() {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.put(api+id, inputs).then(function (response) {
-            //  console.log(response.data);
+        axios.put('http://localhost:3000/users'+id, inputs).then(function (response) {
+             console.log(response.data);
              navigate('/studentlist');
         })
     }

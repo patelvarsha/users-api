@@ -17,21 +17,22 @@ const StudentForm = () => {
     onSubmit: values => {
       // console.log(JSON.stringify(values, null, 2));
       console.log(values);
-
-      axios({
-        method: 'post',
-        url: api,
-        data: values,
-        config: { header: { 'Content-Type': 'multipart/form-data', 'Accept': 'application/json' } }
+      axios.post('http://localhost:3000/users').then(function (response) {
+        console.log(response.data);
+        navigate('/studentlist');
+        // window.location.href = `/studentlist`
       })
-        .then(function (response) {
-          console.log(response.data);
-          navigate('/studentlist');
-          // window.location.href = `/studentlist`
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      // axios({
+      //   method: 'post',
+      //   url: api,
+      //   data: values,
+      //   config: { header: { 'Content-Type': 'multipart/form-data', 'Accept': 'application/json' } }
+      // })
+       
     },
 
   });

@@ -4,6 +4,16 @@
       "id": 1,
       "name": "json-server",
       "email": "typicode@gmail.com"
+    },
+    {
+      "name": "user 1",
+      "email": "user1@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Manan S Lad",
+      "email": "manan@gmail.com",
+      "id": 3
     }
   ],
   "post": [
