@@ -20,45 +20,16 @@ export default function StudentList() {
   }
 
   const deletePost = (id) => {
-    axios.delete('http://localhost:3000/users'+id).then(res=>console.log(res.data)).catch(err=>console.log(err))
-//     const index = studData.findIndex(stud => stud.id === id);
-//     // const d = studData.find(element => element.id)
-//     // console.log(d);
-//     const data =
-//       studData.filter((stud) => {
-//         return stud.id !== id
-//       })
-//     console.log(data);
-// axios.delete(api+id,).then(res=>console.log(res.data))
-//     setStudData(data)
-
+    axios.delete(`http://localhost:3000/users/${id}`).then(res=>console.log(res.data)).catch(err=>console.log(err))
   };
 
-  const updateRecord = async () => {
-
-    const requestOptions = {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: 'ReactHooksPUT ' })
-    };
-    fetch('https://phygitalitclinic.com/react/StudentDb/studData.php/', requestOptions)
-      .then(async res => {
-        const data = await res.json();
-        if (res.ok) {
-          console.log(data.name);
-        }
-      })
-  }
   const updateStud = (id) => {
     
     const index = studData.findIndex(stud => stud.id === id);
 
-    // console.log(index);
     if (index !== -1) {
       localStorage.setItem("StudId", id);
       navigate(`/studentedit/${id}`);
-      // window.location.href = `/studentedit/${id}`;
-
     }
     else {
       console.log("Not found");

@@ -9,8 +9,6 @@ export default function ListUser() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState([]);
 
-    // const { id } = useParams();
-
     useEffect(() => {
          getUser();
     },[]);

@@ -15,24 +15,15 @@ const StudentForm = () => {
     },
 
     onSubmit: values => {
-      // console.log(JSON.stringify(values, null, 2));
+     
       console.log(values);
       axios.post('http://localhost:3000/users',values).then(function (response) {
         console.log(response.data);
         navigate('/studentlist');
-        // window.location.href = `/studentlist`
       })
       .catch(function (error) {
         console.log(error);
-      });
-
-      // axios({
-      //   method: 'post',
-      //   url: "http://localhost:3000/users",
-      //   data: values,
-      //   config: { header: { 'Content-Type': 'multipart/form-data', 'Accept': 'application/json' } }
-      // })
-       
+      });     
     },
 
   });
@@ -62,14 +53,6 @@ const StudentForm = () => {
                         </div>
                       </div>
                     </div>
-                    {/* <div className="row">
-                      <div className="col-sm-12">
-                        <div className="form-group">
-                          <div className="input-group">
-                            <input className="form-control" type="text" name='mobile' value={formik.values.mobile} onChange={formik.handleChange} placeholder="Mobile" /> </div>
-                        </div>
-                      </div>
-                    </div> */}
                     <button type="submit" className="btn btn-success btn-lg mb-1">Submit</button>
                   </form>
                 </div>
