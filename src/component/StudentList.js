@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
-import api from '../api';
 export default function StudentList() {
 
   const [studData, setStudData] = useState([]);
@@ -21,7 +20,7 @@ export default function StudentList() {
   }
 
   const deletePost = (id) => {
-    axios.delete('http://localhost:3000/users').then(res=>console.log(res.data)).catch(err=>console.log(err))
+    axios.delete('http://localhost:3000/users'+id).then(res=>console.log(res.data)).catch(err=>console.log(err))
 //     const index = studData.findIndex(stud => stud.id === id);
 //     // const d = studData.find(element => element.id)
 //     // console.log(d);

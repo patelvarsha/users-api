@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import api from '../api';
+
 
 const StudentForm = () => {
 
@@ -17,7 +17,7 @@ const StudentForm = () => {
     onSubmit: values => {
       // console.log(JSON.stringify(values, null, 2));
       console.log(values);
-      axios.post('http://localhost:3000/users').then(function (response) {
+      axios.post('http://localhost:3000/users',values).then(function (response) {
         console.log(response.data);
         navigate('/studentlist');
         // window.location.href = `/studentlist`
@@ -28,7 +28,7 @@ const StudentForm = () => {
 
       // axios({
       //   method: 'post',
-      //   url: api,
+      //   url: "http://localhost:3000/users",
       //   data: values,
       //   config: { header: { 'Content-Type': 'multipart/form-data', 'Accept': 'application/json' } }
       // })
