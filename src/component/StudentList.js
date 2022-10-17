@@ -70,7 +70,7 @@ export default function StudentList() {
   }
   return (
     <div>
-      {/* <div className='d-flex justify-content-end p-3'><button type="button" className='btn btn-dark p-2' onClick={addUser}>Add User</button></div> */}
+      <div className='d-flex justify-content-end p-3'><button type="button" className='btn btn-dark p-2' onClick={addUser}>Add User</button></div>
       <table className="table align-middle mb-0 bg-white">
         <thead className="bg-light">
           <tr>

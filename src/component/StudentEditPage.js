@@ -20,7 +20,7 @@ export default function ListUser() {
          {
              console.log(response.data);
             setInputs(response.data);
-        });
+        }).catch(err=>console.log(err));
     }
     const handleChange = (event) => {
         const name = event.target.name;
@@ -34,7 +34,7 @@ export default function ListUser() {
         axios.put(`http://localhost:3000/users/${id}`, inputs).then(function (response) {
              console.log(response.data);
              navigate('/studentlist');
-        })
+        }).catch(err=>console.log(err));
     }
     
     return (
